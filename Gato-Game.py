@@ -3,7 +3,7 @@ from tkinter import messagebox
 
 class Juego:
     """
-    Clase principal que gestiona el flujo del juego de Tic-Tac-Toe (Tres en Raya).
+    Clase principal que gestiona el flujo del juego del Gato (Tres en Raya).
     """
 
     def __init__(self):
@@ -68,3 +68,73 @@ class Juego:
         self.jugador1.contador_clicks = 0
         self.jugador2.contador_clicks = 0
 
+class Tablero:
+    """
+    Clase que representa el tablero de juego.
+    """
+
+    def __init__(self):
+        """
+        Inicializa el tablero con una matriz vacía y un contenedor gráfico de botones.
+        """
+        self.botones = []
+        self.matriz = [[None, None, None],
+                       [None, None, None],
+                       [None, None, None]]
+        self.frame = tk.Frame()
+
+    def crear_tablero(self):
+        """
+        Crea los botones gráficos del tablero y los organiza en una cuadrícula.
+        """
+        for fila in range(3):
+            fila_botones = []
+            for columna in range(3):
+                boton = tk.Button(self.frame, text=" ", font=('Helvetica', 20), width=5, height=2,
+                                  command=lambda f=fila, c=columna: juego.set_boton(f, c))
+                boton.grid(row=fila, column=columna)
+                fila_botones.append(boton)
+            self.botones.append(fila_botones)
+        self.frame.pack()
+
+    def verificar_ganador(self):
+        """
+        Verifica si existe un ganador en filas, columnas o diagonales.
+        Returns:
+            str: La marca del jugador ganador ("X" o "O"), o None si no hay ganador.
+        """
+        for i in range(3):
+            if self.matriz[i][0] == self.matriz[i][1] == self.matriz[i][2] and self.matriz[i][0] is not None:
+                return self.matriz[i][0]  # Ganador en fila
+            if self.matriz[0][i] == self.matriz[1][i] == self.matriz[2][i] and self.matriz[0][i] is not None:
+                return self.matriz[0][i]  # Ganador en columna
+
+        # Verificar diagonales
+        if self.matriz[0][0] == self.matriz[1][1] == self.matriz[2][2] and self.matriz[0][0] is not None:
+            return self.matriz[0][0]
+        if self.matriz[0][2] == self.matriz[1][1] == self.matriz[2][0] and self.matriz[0][2] is not None:
+            return self.matriz[0][2]
+
+        return None  # No hay ganador aún
+
+    def set_boton(self, fila, columna, marca):
+        """
+        Configura el botón seleccionado con la marca del jugador y lo desactiva.
+        Args:
+            fila (int): La fila del botón.
+            columna (int): La columna del botón.
+            marca (str): La marca del jugador ("X" o "O").
+        """
+        self.botones[fila][columna].config(text=marca, state=tk.DISABLED)
+        self.matriz[fila][columna] = marca
+
+    def reiniciar_tablero(self):
+        """
+        Reinicia el tablero gráfico y la matriz para un nuevo juego.
+        """
+        for fila in self.botones:
+            for boton in fila:
+                boton.config(text=" ", state=tk.NORMAL)
+        self.matriz = [[None, None, None],
+                       [None, None, None],
+                       [None, None, None]]
