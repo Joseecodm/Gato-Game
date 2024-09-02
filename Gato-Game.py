@@ -163,3 +163,40 @@ class Jugadores:
         Método para ser sobrescrito por las subclases, para la lógica del turno.
         """
         pass
+class Jugador1(Jugadores):
+    """
+    Clase que representa al Jugador 1, que usa la marca "X".
+    """
+
+    def __init__(self):
+        """
+        Inicializa al Jugador 1 con la marca "X".
+        """
+        super().__init__()
+        self.marca = "X"
+
+    def dar_turno(self):
+        """
+        Ejecuta la lógica del turno para el Jugador 1.
+        """
+        if self.verificar_turno():
+            juego.verificar_ganador()
+
+class Jugador2(Jugadores):
+    """
+    Clase que representa al Jugador 2, que usa la marca "O".
+    """
+
+    def __init__(self):
+        """
+        Inicializa al Jugador 2 con la marca "O".
+        """
+        super().__init__()
+        self.marca = "O"
+
+    def dar_turno(self):
+        """
+        Ejecuta la lógica del turno para el Jugador 2.
+        """
+        if self.verificar_turno():
+            juego.verificar_ganador()
