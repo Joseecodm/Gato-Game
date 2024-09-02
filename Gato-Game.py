@@ -200,3 +200,7 @@ class Jugador2(Jugadores):
         """
         if self.verificar_turno():
             juego.verificar_ganador()
+
+juego = Juego()
+juego.inicializar()
+juego.tablero.frame.mainloop()
