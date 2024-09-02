@@ -1,79 +1,115 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Tres en Línea</title>
-<style>
-    body { 
-        font-family: sans-serif; 
-        background-color: #f0f0f0;
-        color: #333;
-    }
-
-    .container {
-        max-width: 1500px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    h1 { 
-        text-align: center; 
-        color: #2980b9;
-        margin-bottom: 20px;
-    }
-
-    h2 {
-        color: #3498db;
-        margin-top: 30px;
-        margin-bottom: 10px;
-    }
-
-    ol, ul {
-        margin-left: 20px;
-    }
-</style>
+    <title>Tres en Línea</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <div class="container">
         <h1>Tres en Línea</h1>
 
         <p>
-            El tres en línea, también conocido como tres en raya o juego de la vieja, es un juego de estrategia abstracto para dos jugadores. Se juega en un tablero de 3x3 casillas. 
+            El tres en línea, también conocido como tres en raya o juego de la vieja, es un juego de estrategia
+            abstracto para dos jugadores. Se juega en un tablero de 3x3 casillas.
         </p>
 
         <h2>Objetivo del juego:</h2>
         <p>
-            El objetivo del juego es ser el primer jugador en formar una línea recta de tres de tus propias marcas (ya sean "X" u "O") horizontalmente, verticalmente o diagonalmente.
+            El objetivo del juego es ser el primer jugador en formar una línea recta de tres de tus propias marcas (ya
+            sean "X" u "O") horizontalmente, verticalmente o diagonalmente.
         </p>
 
         <h2>Cómo se juega:</h2>
         <ol>
-            <li>Preparación: Los jugadores deciden quién jugará primero y qué marca utilizará cada uno (generalmente "X" y "O").</li>
+            <li>Preparación: Los jugadores deciden quién jugará primero y qué marca utilizará cada uno (generalmente "X"
+                y "O").</li>
             <li>Turnos: Los jugadores se turnan para colocar su marca en una casilla vacía del tablero.</li>
-            <li>Ganar o Empatar: El juego continúa hasta que un jugador logra formar una línea de tres de sus marcas o hasta que todas las casillas estén llenas sin que ningún jugador haya ganado, lo que resulta en un empate.</li>
+            <li>Ganar o Empatar: El juego continúa hasta que un jugador logra formar una línea de tres de sus marcas o
+                hasta que todas las casillas estén llenas sin que ningún jugador haya ganado, lo que resulta en un
+                empate.</li>
         </ol>
 
         <h2>Características del juego:</h2>
         <ul>
-            <li>Simple y accesible: Las reglas son fáciles de entender, lo que lo hace adecuado para todas las edades.</li>
-            <li>Estratégico: A pesar de su simplicidad, el tres en línea requiere pensamiento estratégico y anticipación de los movimientos del oponente.</li>
-            <li>Corta duración: Las partidas suelen ser rápidas, lo que lo convierte en un juego ideal para jugar en momentos de ocio o entre actividades.</li>
+            <li>Simple y accesible: Las reglas son fáciles de entender, lo que lo hace adecuado para todas las edades.
+            </li>
+            <li>Estratégico: A pesar de su simplicidad, el tres en línea requiere pensamiento estratégico y anticipación
+                de los movimientos del oponente.</li>
+            <li>Corta duración: Las partidas suelen ser rápidas, lo que lo convierte en un juego ideal para jugar en
+                momentos de ocio o entre actividades.</li>
         </ul>
 
         <h2>Variantes:</h2>
         <p>
-            Existen diversas variantes del tres en línea, como el "tres en línea de cinco" que se juega en un tablero más grande y requiere alinear cinco marcas en lugar de tres. También hay versiones tridimensionales y versiones con reglas especiales.
+            Existen diversas variantes del tres en línea, como el "tres en línea de cinco" que se juega en un tablero
+            más grande y requiere alinear cinco marcas en lugar de tres. También hay versiones tridimensionales y
+            versiones con reglas especiales.
         </p>
 
         <h2>Implementación:</h2>
-        <p>
-            
-        </p>
-    </div>
-    </div>
+        <div id="game-board"></div>
+        <p id="game-status"></p>
 
+        <h2>Explicación de la Implementación:</h2>
+        <p>
+            <strong>Inicialización del Juego:</strong>
+        </p>
+        <ul>
+            <li>Se define una variable `board` (un array) para representar el estado interno del tablero.</li>
+            <li>Se establece el jugador inicial (`currentPlayer`) como 'X'.</li>
+            <li>Se inicializa una variable `gameOver` como `false` para controlar el estado del juego.</li>
+        </ul>
+
+        <p>
+            <strong>Creación del Tablero:</strong>
+        </p>
+        <ul>
+            <li>Se obtiene una referencia al elemento `div` con el id `game-board`.</li>
+            <li>Se itera 9 veces (para las 9 celdas del tablero):
+                <ul>
+                    <li>Se agrega un valor vacío ('') al array `board` para representar una celda vacía.</li>
+                    <li>Se crea un elemento `div` para cada celda, se le asigna la clase 'cell' y un id numérico (0-8).
+                    </li>
+                    <li>Se agrega un event listener a cada celda para manejar los clics del usuario.</li>
+                    <li>Se agrega la celda creada al tablero (`gameBoard`).</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p>
+            <strong>Manejo de Clics:</strong>
+        </p>
+        <ul>
+            <li>La función `handleCellClick` se ejecuta cuando el usuario hace clic en una celda.</li>
+            <li>Si el juego ha terminado (`gameOver` es `true`), no se hace nada.</li>
+            <li>Se obtiene el id de la celda clicada y se verifica si está vacía.</li>
+            <li>Si la celda está vacía:
+                <ul>
+                    <li>Se marca la celda en el array `board` con la marca del jugador actual.</li>
+                    <li>Se muestra la marca del jugador en la celda en la interfaz gráfica.</li>
+                    <li>Se llama a la función `checkWinner` para verificar si hay un ganador.</li>
+                    <li>Si hay un ganador, se actualiza el mensaje de estado del juego y se establece `gameOver` como
+                        `true`.</li>
+                    <li>Si no hay ganador pero el tablero está lleno, se declara un empate y se actualiza el mensaje de
+                        estado del juego.</li>
+                    <li>Si no hay ganador ni empate, se cambia el turno al otro jugador.</li>
+                </ul>
+            </li>
+        </ul>
+ 
+        <p>
+            <strong>Verificación de Ganador:</strong>
+        </p>
+        <ul>
+            <li>La función `checkWinner` verifica si hay un ganador en el tablero.</li>
+            <li>Se definen todas las combinaciones ganadoras posibles (filas, columnas y diagonales).</li>
+            <li>Se itera sobre cada combinación y se verifica si las tres celdas correspondientes tienen la misma marca
+                (y no están vacías).</li>
+            <li>Si se encuentra una combinación ganadora, la función devuelve `true`; de lo contrario, devuelve `false`.
+            </li>
+        </ul>
+    </div>
 </body>
+
 </html>
