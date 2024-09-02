@@ -1,2 +1,2 @@
-# Gato-Game
-The famous gato game.
+# Gato Game
+- Juego del gato xd
