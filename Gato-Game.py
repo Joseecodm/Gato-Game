@@ -138,3 +138,28 @@ class Tablero:
         self.matriz = [[None, None, None],
                        [None, None, None],
                        [None, None, None]]
+
+class Jugadores:
+    """
+    Clase base para los jugadores del juego.
+    """
+
+    def __init__(self):
+        """
+        Inicializa el contador de clics para los jugadores.
+        """
+        self.contador_clicks = 0
+
+    def verificar_turno(self):
+        """
+        Verifica si es el turno del jugador actual.
+        Returns:
+            bool: True si es el turno del jugador, False de lo contrario.
+        """
+        return juego.verificar_turno() == self
+
+    def dar_turno(self):
+        """
+        Método para ser sobrescrito por las subclases, para la lógica del turno.
+        """
+        pass
