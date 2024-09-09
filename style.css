@@ -11,6 +11,11 @@ body {
     padding: 20px;
     text-align: center;
   }
+
+  header h1 {
+    text-align: center;
+
+  }
   
   h1, h2 {
     margin: 0;
@@ -40,8 +45,8 @@ body {
   section {
     margin-bottom: 20px;
     padding: 20px;
-    border: 1px solid #ddd; /* Borde sutil para las secciones */
-    border-radius: 5px; /* Esquinas redondeadas */
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
   }
   
   img {
@@ -49,6 +54,7 @@ body {
     height: auto;
     display: block;
     margin-bottom: 10px;
+    align-items: baseline;
   }
   
   .boton {
