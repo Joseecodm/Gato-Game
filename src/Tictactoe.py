@@ -6,6 +6,7 @@ class Juego:
     """Clase principal que gestiona el flujo del juego del Gato (Tres en Raya)."""
 
     def __init__(self):
+
         self.tablero = Tablero()
         self.jugador1 = Jugador1()
         self.jugador2 = Jugador2()
@@ -52,14 +53,14 @@ class Tablero:
         self.matriz = [[None, None, None],
                        [None, None, None],
                        [None, None, None]]
-        self.frame = ttk.Frame()
+        self.frame = ttk.Frame()   
 
     def crear_tablero(self):
         """Crea los botones gráficos del tablero y los organiza en una cuadrícula."""
         for fila in range(3):
             fila_botones = []
             for columna in range(3):
-                boton = ttk.Button(self.frame, text=" ", style="TicTacToe.TButton", command=lambda f=fila, c=columna: juego.set_boton(f, c))
+                boton = ttk.Button(self.frame, text="", style="TicTacToe.TButton", command=lambda f=fila, c=columna: juego.set_boton(f, c))
                 boton.grid(row=fila, column=columna, padx=5, pady=5)
                 fila_botones.append(boton)
             self.botones.append(fila_botones)
@@ -133,12 +134,10 @@ class Jugador2(Jugadores):
         if self.verificar_turno():
             juego.verificar_ganador()
 
-# Aplicar estilo personalizado para los botones
 def aplicar_estilos():
     estilo = ttk.Style()
-    estilo.configure("TicTacToe.TButton", font=('Helvetica', 20), width=5, height=2)
+    estilo.configure("TicTacToe.TButton", font=('Helvetica', 20), width=5, height=2, background="black", foreground="white")
 
-# Iniciar el juego
 aplicar_estilos()
 juego = Juego()
 juego.inicializar()
