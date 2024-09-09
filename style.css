@@ -1,80 +1,80 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff; /* Gris claro de fondo */
-  }
-  
-  header {
-    background-color: #333;
-    color: #fff; 
-    padding: 20px;
-    text-align: center;
-  }
-
-  header h1 {
-    text-align: center;
-
-  }
-  
-  h1, h2 {
-    margin: 0;
-    padding: 10px;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-  }
-  
-  nav li {
-    list-style: none;
-    margin-left: 20px;
-  }
-  
-  nav a {
-    color: #fff; /* Enlaces blancos en el menú */
-    text-decoration: none;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  section {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* La imagen ya es un elemento de bloque */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    margin-bottom: 10px;
-    align-items: baseline;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* Gris claro de fondo */
 }
 
-  #descarga {
-    text-align: center; /* Centra el contenido de la sección */
-  }
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
 
-  .boton {
-    background-color: #7e8994; 
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    align-items: center;
-    display: inline-block; 
-  }
-  
-  .boton:hover {
-    background-color: #3a5572;
-  }
+header h1 {
+  text-align: center;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+nav li {
+  list-style: none;
+  margin-left: 20px;
+}
+
+nav a {
+  color: #fff; /* Enlaces blancos en el menú */
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* La imagen ya es un elemento de bloque */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  margin-bottom: 10px;
+  align-items: baseline;
+}
+
+#descarga {
+  text-align: center; /* Centra el contenido de la sección */
+}
+
+.boton {
+  background-color: #7e8994;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  display: inline-block;
+}
+
+.boton:hover {
+  background-color: #3a5572;
+}

@@ -136,7 +136,8 @@ class Jugador2(Jugadores):
 
 def aplicar_estilos():
     estilo = ttk.Style()
-    estilo.configure("TicTacToe.TButton", font=('Helvetica', 20), width=5, height=2, background="black", foreground="white")
+    estilo.configure("TicTacToe.TButton", font=('Helvetica', 20), width=5, height=2, background="black", foreground="white",  relief="flat")
+    estilo.map("TicTacToe.TButton", background=[("active", "blue"), ("disabled", "red")])
 
 aplicar_estilos()
 juego = Juego()

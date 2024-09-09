@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicTacToe</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
@@ -13,10 +15,12 @@
     </header>
 
     <main>
-    
+
         <section id="descripcion">
             <h2>Descripción del juego</h2>
-            <p>El tic-tac-toe, también conocido como "tres en raya" o "gato", es un juego de lápiz y papel sencillo pero estratégico para dos jugadores. Se juega en una cuadrícula de 3x3, donde cada jugador elige un símbolo, generalmente "X" u "O".</p>
+            <p>El tic-tac-toe, también conocido como "tres en raya" o "gato", es un juego de lápiz y papel sencillo pero
+                estratégico para dos jugadores. Se juega en una cuadrícula de 3x3, donde cada jugador elige un símbolo,
+                generalmente "X" u "O".</p>
         </section>
 
         <section id="implementacion">
@@ -27,14 +31,18 @@
             <h3>Estructura del Código</h3>
             <p>El código está organizado en tres clases principales:</p>
             <ul>
-                <li><code>Juego</code>: Gestiona el flujo general del juego, incluyendo la inicialización, el control de turnos, la verificación de ganadores y el reinicio.</li>
-                <li><code>Tablero</code>: Representa el tablero de juego, maneja la creación de los botones, la asignación de marcas y la verificación de ganadores.</li>
-                <li><code>Jugadores</code> (y sus subclases <code>Jugador1</code> y <code>Jugador2</code>): Representan a los jugadores, cada uno con su marca ("X" u "O").</li>
+                <li><code>Juego</code>: Gestiona el flujo general del juego, incluyendo la inicialización, el control de
+                    turnos, la verificación de ganadores y el reinicio.</li>
+                <li><code>Tablero</code>: Representa el tablero de juego, maneja la creación de los botones, la
+                    asignación de marcas y la verificación de ganadores.</li>
+                <li><code>Jugadores</code> (y sus subclases <code>Jugador1</code> y <code>Jugador2</code>): Representan
+                    a los jugadores, cada uno con su marca ("X" u "O").</li>
             </ul>
 
             <h3>Lógica del Juego</h3>
             <ol>
-                <li><code>Juego.inicializar()</code>: Crea el tablero gráfico llamando a <code>Tablero.crear_tablero()</code>.</li>
+                <li><code>Juego.inicializar()</code>: Crea el tablero gráfico llamando a
+                    <code>Tablero.crear_tablero()</code>.</li>
                 <li>El usuario hace clic en un botón del tablero.</li>
                 <li><code>Juego.set_boton()</code>:
                     <ul>
@@ -56,8 +64,10 @@
 
             <h3>Consideraciones Adicionales</h3>
             <ul>
-                <li>El diagrama UML (imagen adjunta) proporciona una representación visual de la estructura de clases y sus relaciones.</li>
-                <li>La clase <code>Jugadores</code> es una clase base que proporciona funcionalidad común a ambos jugadores.</li>
+                <li>El diagrama UML (imagen adjunta) proporciona una representación visual de la estructura de clases y
+                    sus relaciones.</li>
+                <li>La clase <code>Jugadores</code> es una clase base que proporciona funcionalidad común a ambos
+                    jugadores.</li>
                 <li>El juego utiliza la biblioteca <code>tkinter</code> para crear la interfaz gráfica de usuario.</li>
             </ul>
 
@@ -66,10 +76,25 @@
 
         </section>
 
+        <section id="equipo">
+            <h2>Equipo</h2>
+            <ul class="equipo-lista">
+              <li>
+                <img src="img/jose.webp" alt="Foto de Jose Manuel Cortes Ceron" width="100px" height="200px">
+                <h3>José Manuel Cortes Cerón</h3>
+                <p>Estudiante de Ingeniería en TICs</p>
+                <p>ITSOEH</p>
+                <p>Desarrollador de este proyecto</p>
+                <p><a href="https://github.com/joseecodm">GitHub</a></p>
+              </li>
+            </ul>
+          </section>
+
         <section id="descarga">
             <h2 style="text-align: center;">Repositorio del juego</h2>
             <a href="https://github.com/Joseecodm/Gato-Game.git" download class="boton">Ir</a>
         </section>
     </main>
 </body>
+
 </html>
