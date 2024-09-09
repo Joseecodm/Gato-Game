@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0; /* Gris claro de fondo */
+    background-color: #ffffff; /* Gris claro de fondo */
   }
   
   header {
@@ -52,29 +52,29 @@ body {
   img {
     max-width: 100%;
     height: auto;
-    display: block;
+    display: block; /* La imagen ya es un elemento de bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
     margin-bottom: 10px;
     align-items: baseline;
+}
+
+  #descarga {
+    text-align: center; /* Centra el contenido de la sección */
   }
-  
+
   .boton {
-    background-color: #007bff; /* Azul para los botones */
+    background-color: #7e8994; 
     color: #fff;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
+    text-align: center;
+    align-items: center;
+    display: inline-block; 
   }
   
   .boton:hover {
-    background-color: #0062cc; /* Azul más oscuro al pasar el mouse */
+    background-color: #3a5572;
   }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
-  

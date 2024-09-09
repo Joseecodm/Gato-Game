@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicTacToe en Python</title>
+    <title>TicTacToe</title>
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
@@ -21,19 +21,51 @@
 
         <section id="implementacion">
             <h2>Implementación en Python</h2>
+            <h3>Diagrama de clases UML:</h3>
             <img src="img/UML.jpg" alt="Diagrama UML del proyecto">
-            <p>Explicación detallada de la implementación, lógica del juego, ejemplos de código, etc.</p>
+
+            <h3>Estructura del Código</h3>
+            <p>El código está organizado en tres clases principales:</p>
+            <ul>
+                <li><code>Juego</code>: Gestiona el flujo general del juego, incluyendo la inicialización, el control de turnos, la verificación de ganadores y el reinicio.</li>
+                <li><code>Tablero</code>: Representa el tablero de juego, maneja la creación de los botones, la asignación de marcas y la verificación de ganadores.</li>
+                <li><code>Jugadores</code> (y sus subclases <code>Jugador1</code> y <code>Jugador2</code>): Representan a los jugadores, cada uno con su marca ("X" u "O").</li>
+            </ul>
+
+            <h3>Lógica del Juego</h3>
+            <ol>
+                <li><code>Juego.inicializar()</code>: Crea el tablero gráfico llamando a <code>Tablero.crear_tablero()</code>.</li>
+                <li>El usuario hace clic en un botón del tablero.</li>
+                <li><code>Juego.set_boton()</code>:
+                    <ul>
+                        <li>Determina el jugador actual usando <code>Juego.verificar_turno()</code>.</li>
+                        <li>Coloca la marca del jugador en el tablero (<code>Tablero.set_boton()</code>).</li>
+                        <li>Incrementa el contador de clics.</li>
+                        <li>Verifica si hay un ganador o un empate (<code>Juego.verificar_ganador()</code>).</li>
+                        <li>Pasa el turno al siguiente jugador.</li>
+                    </ul>
+                </li>
+                <li>Si hay un ganador o un empate:
+                    <ul>
+                        <li>Se muestra un mensaje emergente.</li>
+                        <li>Se reinicia el juego (<code>Juego.reiniciar()</code>).</li>
+                    </ul>
+                </li>
+                <li>El juego continúa hasta que haya un ganador o un empate.</li>
+            </ol>
+
+            <h3>Consideraciones Adicionales</h3>
+            <ul>
+                <li>El diagrama UML (imagen adjunta) proporciona una representación visual de la estructura de clases y sus relaciones.</li>
+                <li>La clase <code>Jugadores</code> es una clase base que proporciona funcionalidad común a ambos jugadores.</li>
+                <li>El juego utiliza la biblioteca <code>tkinter</code> para crear la interfaz gráfica de usuario.</li>
+            </ul>
         </section>
 
         <section id="descarga">
-            <h2>Repositorio del juego</h2>
-            <a href="https://github.com/Joseecodm/Gato-Game.git" download class="boton">Descargar ahora</a>
+            <h2 style="text-align: center;">Repositorio del juego</h2>
+            <a href="https://github.com/Joseecodm/Gato-Game.git" download class="boton">Ir</a>
         </section>
     </main>
-
-    <footer>
-        <p>&copy; 2024 Jose Manuel Cortes Cerón | <a href="mailto:230110688@itsoeh.edu.mx">Contacto</a></p>
-    </footer>
-
 </body>
 </html>
