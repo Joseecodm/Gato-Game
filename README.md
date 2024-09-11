@@ -1,2 +1,4 @@
 # Gato Game
-- Juego del gato xd
+- TicTacToe in python 
+
+By: Jose Manuel Cortes Ceron.
