@@ -3,8 +3,7 @@ from tkinter import messagebox
 from tkinter import ttk
 
 class Juego:
-    """Clase principal que gestiona el flujo del juego del Gato (Tres en Raya)."""
-
+    """Clase principal que gestiona el flujo del juego del Gato."""
     def __init__(self):
 
         self.tablero = Tablero()
@@ -13,7 +12,7 @@ class Juego:
         self.contador_clicks = 0
 
     def verificar_turno(self):
-        """Verifica de quién es el turno según la cantidad de clics realizados."""
+        """Verifica de quién es el turno según la cantidad de clics."""
         return self.jugador1 if self.contador_clicks % 2 == 0 else self.jugador2
 
     def inicializar(self):
@@ -21,7 +20,7 @@ class Juego:
         self.tablero.crear_tablero()
 
     def verificar_ganador(self):
-        """Verifica si hay un ganador o si se ha alcanzado un empate."""
+        """Verifica si hay un ganador o si es un empate."""
         ganador = self.tablero.verificar_ganador()
         if ganador:
             messagebox.showinfo("Fin del juego", f"¡El jugador {ganador} ha ganado!")
@@ -34,7 +33,7 @@ class Juego:
         """Asigna la marca del jugador actual a la celda seleccionada en el tablero."""
         jugador_actual = self.verificar_turno()
         self.tablero.set_boton(fila, columna, jugador_actual.marca)
-        self.contador_clicks += 1
+        self.contador_clicks += 1 
         self.verificar_ganador()
         jugador_actual.dar_turno()
 
